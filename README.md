@@ -1,2 +1,8 @@
 # trypanosome_parasite_detection
-Accelerate research in trypanosome detection with this code repository. Train and evaluate object detectors using state-of-the-art architectures, accompanied by preprocessing utilities, training scripts, and evaluation metrics. Harness the power of deep learning for accurate trypanosome parasite detection.
+
+This repository contains code for training and evaluating object detectors for trypanosome parasite detection. 
+It contains two directories: [yolov7](#yolov7) and [retinanet_and_fasterrcnn](#retinanet_and_fasterrcnn). 
+The [yolov7](#yolov7) code is based on the YOLOv7 implementation at 
+[https://github.com/WongKinYiu/yolov7](https://github.com/WongKinYiu/yolov7), while the 
+[retinanet_and_fasterrcnn](#retinanet_and_fasterrcnn) is an adapted version of the [torchvision 
+template](https://github.com/pytorch/vision/tree/main/references/detection) code for object detection.

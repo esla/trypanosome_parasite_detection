@@ -1,0 +1,15 @@
+# COCO 2017 dataset http://cocodataset.org
+
+## download command/URL (optional)
+#download: bash ./scripts/get_coco.sh
+
+# train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
+train: <root path to the train data. This root path must contain the train and labels directories>
+val: <root path to the val data. This root path must contain the train and labels directories>
+test: <root path to the train data. This root path must contain the train and labels directories>
+
+# number of classes
+nc: 1
+
+# class names
+names: ['tryp']
