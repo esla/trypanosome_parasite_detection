@@ -170,7 +170,7 @@ def main(args):
     # Fixme: Now, all best epochs are save. This is memory inefficient. Others may need to save only the last
     #  best epoch. Add a config parameter that allows the user to save only the last best model (one model only).
     # ### start: save the best epoch ###
-    min_loss = -math.inf  # chose this value arbitrarily after observing the training logs
+    min_loss = math.inf  # Set the initial minimum loss to an arbitrarily large value
     # ### end: save the best epoch ###
 
     for epoch in range(args.start_epoch, args.epochs):
