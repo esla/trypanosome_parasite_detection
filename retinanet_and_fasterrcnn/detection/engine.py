@@ -193,7 +193,13 @@ def evaluate_test_only(model, data_loader, device="gpu"):
             json_dict["images"] = coco_evaluator.coco_eval["bbox"].cocoDt.dataset["images"]
             json_dict["categories"] = coco_evaluator.coco_eval["bbox"].cocoDt.dataset["categories"]
         else:
-            json_dict["annotations"] += coco_evaluator.coco_eval["bbox"].cocoDt.dataset["annotations"]
+            # update the annotations but skip images without predictions. COCO API handles such cases
+            if len(coco_evaluator.coco_eval["bbox"].cocoDt.dataset.keys()) > 0:
+                json_dict["annotations"] += coco_evaluator.coco_eval["bbox"].cocoDt.dataset["annotations"]
+                # update annotation ids
+                json_dict["annotations"][-1]["id"] = len(json_dict["annotations"]) + 1
+            else:
+                continue
 
     # update the annotation ids
     for i in range(0, len(json_dict["annotations"])):
