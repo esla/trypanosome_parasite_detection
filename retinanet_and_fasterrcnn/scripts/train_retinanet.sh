@@ -17,7 +17,7 @@ torchrun --nproc_per_node=2 train.py        \
                           --model retinanet_resnet50_fpn_v2   \
                           --trainable-backbone-layers 5     \
                           --epochs 100   \
-                          --weights FasterRCNN_ResNet50_FPN_V2_Weights.DEFAULT  \
+                          --weights RetinaNet_ResNet50_FPN_V2_Weights.DEFAULT  \
                           --weights-backbone ResNet50_Weights.DEFAULT \
                           --train-images-dir ${TRAIN_IMAGES_DIR}    \
                           --val-images-dir ${VAL_IMAGES_DIR} \
