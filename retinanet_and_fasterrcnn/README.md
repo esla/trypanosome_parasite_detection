@@ -6,22 +6,22 @@ The purpose of this repo is to serve as a reference implementation of training t
 and RetinaNet models for trypanosome parasite detection on the Tryp dataset.
 
 ### Requirements
-The required packages are in the [requirements.txt](requirements.txt) file. We included the versions
-of the packages that we have tested on. To install them, run:
-```bash
-pip install -r requirements.txt
-```
+We included the versions
+of the packages that we have tested on in the [requirements.txt](requirements.txt) file. If you 
+have issues running the code on the latest versions of the required packages, ensure that you install
+the versions in the requirements.txt file.
 
-Except otherwise noted, all models have been trained on 2x Titan RTX GPUs. 
+All models were trained on two Titan RTX GPUs. 
 
 ## Training
 We provide the training and evaluation scripts in the [scripts](scripts) folder. You have to modify the
-required paths in the scripts to match your environment. The content of the scripts are:
+required paths in the scripts to match your settings. The content of the scripts are:
 
 ### Dataset preparation
 Download the Tryp dataset into your preferred locations. The paths to the dataset information
 are needed in the training scripts. The dataset annotation information is in the MS COCO JSON format.
-We will provide a link to download the dataset soon.
+We have used the trypanosome dataset hosted at [Figshare](https://doi.org/10.6084/m9.figshare.22825787.v1)
+to train Faster-RCNN and RetinaNet using this repository.
 
 ### Faster R-CNN ResNet-50 FPN 
 An example script is [here](scripts/train_faster_rcnn_resnet50_fpn.sh).
