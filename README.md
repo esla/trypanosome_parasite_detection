@@ -1,5 +1,11 @@
 # trypanosome_parasite_detection
 
+<div align="center">
+    <a href="./">
+        <img src="./docs/assets/trypanosome_parasite.png" width="79%"/>
+    </a>
+</div>
+
 This repository contains code for training and evaluating object detectors for trypanosome parasite detection. 
 It contains two directories: [yolov7](yolov7) and [retinanet_and_fasterrcnn](retinanet_and_fasterrcnn). 
 The [yolov7](yolov7) code is based on the YOLOv7 implementation at 

@@ -170,7 +170,7 @@ def main(args):
     # Fixme: Now, all best epochs are save. This is memory inefficient. Others may need to save only the last
     #  best epoch. Add a config parameter that allows the user to save only the last best model (one model only).
     # ### start: save the best epoch ###
-    min_loss = math.inf  # Set the initial minimum loss to an arbitrarily large value
+    best_mAP_50 = -math.inf
     # ### end: save the best epoch ###
 
     for epoch in range(args.start_epoch, args.epochs):
@@ -233,14 +233,13 @@ def main(args):
             if args.amp:
                 checkpoint["scaler"] = scaler.state_dict()
 
-            curr_loss = eval_info["eval/loss"]
+            curr_mAP_50 = eval_info["eval/mAP50"]
 
-            if curr_loss <= min_loss:
+            if curr_mAP_50 >= best_mAP_50:
                 print("*" * 40)
-                print(f"Saving ... The last best was {min_loss}")
+                print(f"Saving ... The last best was {best_mAP_50} and the current is {curr_mAP_50}")
                 print("*" * 40)
-                min_loss = curr_loss
-
+                best_mAP_50 = curr_mAP_50
                 utils.save_on_master(
                     {
                         'model': model_without_ddp.state_dict(),
