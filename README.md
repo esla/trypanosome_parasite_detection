@@ -2,7 +2,7 @@
 
 <div align="center">
     <a href="./">
-        <img src="./docs/assets/trypanosome_parasite.pdf" width="79%"/>
+        <img src="./docs/assets/trypanosome_parasite.png" width="79%"/>
     </a>
 </div>
 
